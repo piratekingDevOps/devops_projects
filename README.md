@@ -1,3 +1,5 @@
+https://github.com/piratekingDevOps/devops_projects.git
+
 run ./servers-stat.sh script and it will give you the following output
 
 #Total CPU usage
