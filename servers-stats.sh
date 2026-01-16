@@ -1,27 +1,36 @@
 #!/bin/bash
 
 #Total CPU usage
-
-echo"########## CPU usage"
+echo "####################"
+echo "#################### CPU usage"
+echo "####################"
 top -bn1 |grep -i "Cpu(s):"
-echo"####################"
+#echo "####################"
 
 #Total memory usage
-echo"########## Memory usage"
+echo "####################"
+echo "#################### Memory usage"
+echo "####################"
 free -h
-echo"####################"
+#echo "####################"
 
 #Total disk usage
-echo"########## Disk usage"
+echo "####################"
+echo "#################### Disk usage"
+echo "####################"
 df -h
-echo"####################"
+#echo "####################"
 
 #Top 5 processes by cpu usage
-echo"########## Top 5 processes by CPU usage"
+echo "####################"
+echo "#################### Top 5 processes by CPU usage"
+echo "####################"
 ps aux --sort=-%cpu |head -n 6
-echo"####################"
+#echo "####################"
 
 #Top 5 processes by memory usage
-echo"########## Top 5 processes by Memory usage"
+echo "####################"
+echo "#################### Top 5 processes by Memory usage"
+echo "####################"
 ps aux --sort=-%mem |head -n 6
-echo"####################"
+#echo "####################"
