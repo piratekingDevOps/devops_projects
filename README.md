@@ -1,4 +1,4 @@
-https://github.com/piratekingDevOps/devops_projects.git
+https://github.com/piratekingDevOps/devops_projects
 
 run ./servers-stat.sh script and it will give you the following output
 
