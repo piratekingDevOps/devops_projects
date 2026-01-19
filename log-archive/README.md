@@ -1,5 +1,11 @@
 # Log Archive Script
 
+## Project URL
+
+[Log Archive Tool Project](https://roadmap.sh/projects/log-archive-tool)
+
+---
+
 ## Overview
 
 This Bash script automates the process of creating a compressed log archive (`.tar.gz`) of a given file or directory.  
