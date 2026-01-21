@@ -21,22 +21,29 @@ awk -F\" '{print $2}' $LOG_FILE \
 echo
 
 echo "Top 5 most response status codes"
-awk '{print $9}' $LOG_FILE \
-	| sort \
-	| uniq -c \
-	| sort -nr \
-	| head -5 \
-	| awk '{printf "%s - %d requests\n", $2,  $1}'
-echo
-
 awk '
 {
-    count[$9]++
+	count[$9]++
 }
 END {
-    for (code in count)
-        printf "%s - %d requests\n", code, count[code]
+	for (code in count)
+	printf "%s - %d requests\n", code, count[code]
 }
 ' "$LOG_FILE" \
 | sort -t'-' -k2 -nr \
 | head -5
+echo
+
+echo "Top 5 user agents"
+awk -F\" '
+
+$6 !="-" && $6!="" { count[$6]++ }
+
+END {
+	for ( user in count )
+	printf "%s - %d requests\n", user, count[user]
+}
+' $LOG_FILE \
+| sort -t'-' -k2 -nr \
+| head -5 \
+| awk -F' - | requests ' '{split($1, a, " "); print a[1]," - ",$2," requests"}'
